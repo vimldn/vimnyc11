@@ -1,6 +1,7 @@
 'use client'
 
 import { useEffect, useRef, useState } from 'react'
+import Link from 'next/link'
 import { useRouter } from 'next/navigation'
 import { Building2, CheckCircle2, ChevronRight, Clock, Database, Search, Shield, Sparkles, Star } from 'lucide-react'
 
@@ -23,6 +24,29 @@ export default function HomePage() {
   const dropdownRef = useRef<HTMLDivElement>(null)
   const abortRef = useRef<AbortController | null>(null)
   const reqSeqRef = useRef(0)
+  // Small in-session cache so previously-typed queries render instantly.
+  // This only affects autocomplete UI (no changes to building pages / data fetching elsewhere).
+  const acCacheRef = useRef<Map<string, { t: number; data: Suggestion[] }>>(new Map())
+  const AC_TTL_MS = 5 * 60 * 1000
+
+  const getCached = (q: string): Suggestion[] | null => {
+    const hit = acCacheRef.current.get(q)
+    if (!hit) return null
+    if (Date.now() - hit.t > AC_TTL_MS) {
+      acCacheRef.current.delete(q)
+      return null
+    }
+    return hit.data
+  }
+
+  const setCached = (q: string, data: Suggestion[]) => {
+    // keep cache small
+    if (acCacheRef.current.size > 75) {
+      const firstKey = acCacheRef.current.keys().next().value
+      if (firstKey) acCacheRef.current.delete(firstKey)
+    }
+    acCacheRef.current.set(q, { t: Date.now(), data })
+  }
 
   useEffect(() => {
     if (query.length < 2) {
@@ -33,6 +57,32 @@ export default function HomePage() {
       return
     }
 
+    const trimmed = query.trim()
+    // 1) Instant render from exact cache hit.
+    const cachedExact = getCached(trimmed)
+    if (cachedExact) {
+      setSuggestions(cachedExact)
+      setShowDropdown(cachedExact.length > 0)
+    } else {
+      // 2) If the user is extending what they just typed, show a quick local filter
+      // while we fetch the real results.
+      // Example: cached "123 MA" -> user types "123 MAD".
+      let provisional: Suggestion[] | null = null
+      for (let i = trimmed.length - 1; i >= 2; i--) {
+        const prefix = trimmed.slice(0, i)
+        const cachedPrefix = getCached(prefix)
+        if (cachedPrefix && cachedPrefix.length) {
+          const needle = trimmed.toLowerCase()
+          provisional = cachedPrefix.filter((s) => s.address.toLowerCase().includes(needle)).slice(0, 8)
+          break
+        }
+      }
+      if (provisional && provisional.length) {
+        setSuggestions(provisional)
+        setShowDropdown(true)
+      }
+    }
+
     const seq = ++reqSeqRef.current
     const controller = new AbortController()
     // Abort the previous request so we never display stale results
@@ -41,7 +91,7 @@ export default function HomePage() {
 
     const timer = setTimeout(async () => {
       try {
-        const res = await fetch(`/api/autocomplete?q=${encodeURIComponent(query)}`, { signal: controller.signal })
+        const res = await fetch(`/api/autocomplete?q=${encodeURIComponent(trimmed)}`, { signal: controller.signal })
         const data = await res.json()
         // Ignore out-of-order responses
         if (reqSeqRef.current !== seq) return
@@ -49,9 +99,11 @@ export default function HomePage() {
         if (data.suggestions?.length) {
           setSuggestions(data.suggestions)
           setShowDropdown(true)
+          setCached(trimmed, data.suggestions)
         } else {
           setSuggestions([])
           setShowDropdown(false)
+          setCached(trimmed, [])
         }
       } catch (e) {
         // Abort is expected when the user keeps typing
@@ -59,7 +111,7 @@ export default function HomePage() {
         setSuggestions([])
         setShowDropdown(false)
       }
-    }, 120)
+    }, 80)
 
     return () => {
       clearTimeout(timer)
@@ -132,9 +184,23 @@ export default function HomePage() {
               <span className="hidden sm:inline text-sm text-[#64748b] ml-2">NYC building reality check</span>
             </div>
           </div>
-          <div className="hidden sm:flex items-center gap-2 text-sm text-[#64748b]">
-            <Clock size={14} />
-            <span>30 / 90 days • 1 / 3 years</span>
+          <div className="flex items-center gap-3">
+            <div className="hidden sm:flex items-center gap-2 text-sm text-[#64748b]">
+              <Clock size={14} />
+              <span>30 / 90 days • 1 / 3 years</span>
+            </div>
+            <Link
+              href="/services"
+              className="px-3 py-1.5 rounded-lg border border-[#1e293b] text-sm text-[#cbd5e1] hover:bg-white/5 transition"
+            >
+              Services
+            </Link>
+            <Link
+              href="/blog"
+              className="px-3 py-1.5 rounded-lg border border-[#1e293b] text-sm text-[#cbd5e1] hover:bg-white/5 transition"
+            >
+              Blog
+            </Link>
           </div>
         </div>
       </header>

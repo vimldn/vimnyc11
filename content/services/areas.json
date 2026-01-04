@@ -1,0 +1,386 @@
+[
+  {
+    "slug": "tribeca",
+    "name": "Tribeca",
+    "borough": "Manhattan",
+    "blurb": "High-density buildings, elevator bookings, and tight curb space\u2014plan for move windows and COIs."
+  },
+  {
+    "slug": "soho",
+    "name": "SoHo",
+    "borough": "Manhattan",
+    "blurb": "High-density buildings, elevator bookings, and tight curb space\u2014plan for move windows and COIs."
+  },
+  {
+    "slug": "nolita",
+    "name": "Nolita",
+    "borough": "Manhattan",
+    "blurb": "High-density buildings, elevator bookings, and tight curb space\u2014plan for move windows and COIs."
+  },
+  {
+    "slug": "chinatown",
+    "name": "Chinatown",
+    "borough": "Manhattan",
+    "blurb": "High-density buildings, elevator bookings, and tight curb space\u2014plan for move windows and COIs."
+  },
+  {
+    "slug": "financial-district",
+    "name": "Financial District",
+    "borough": "Manhattan",
+    "blurb": "High-density buildings, elevator bookings, and tight curb space\u2014plan for move windows and COIs."
+  },
+  {
+    "slug": "battery-park-city",
+    "name": "Battery Park City",
+    "borough": "Manhattan",
+    "blurb": "High-density buildings, elevator bookings, and tight curb space\u2014plan for move windows and COIs."
+  },
+  {
+    "slug": "lower-east-side",
+    "name": "Lower East Side",
+    "borough": "Manhattan",
+    "blurb": "High-density buildings, elevator bookings, and tight curb space\u2014plan for move windows and COIs."
+  },
+  {
+    "slug": "east-village",
+    "name": "East Village",
+    "borough": "Manhattan",
+    "blurb": "High-density buildings, elevator bookings, and tight curb space\u2014plan for move windows and COIs."
+  },
+  {
+    "slug": "west-village",
+    "name": "West Village",
+    "borough": "Manhattan",
+    "blurb": "High-density buildings, elevator bookings, and tight curb space\u2014plan for move windows and COIs."
+  },
+  {
+    "slug": "greenwich-village",
+    "name": "Greenwich Village",
+    "borough": "Manhattan",
+    "blurb": "High-density buildings, elevator bookings, and tight curb space\u2014plan for move windows and COIs."
+  },
+  {
+    "slug": "noho",
+    "name": "NoHo",
+    "borough": "Manhattan",
+    "blurb": "High-density buildings, elevator bookings, and tight curb space\u2014plan for move windows and COIs."
+  },
+  {
+    "slug": "chelsea",
+    "name": "Chelsea",
+    "borough": "Manhattan",
+    "blurb": "High-density buildings, elevator bookings, and tight curb space\u2014plan for move windows and COIs."
+  },
+  {
+    "slug": "flatiron",
+    "name": "Flatiron",
+    "borough": "Manhattan",
+    "blurb": "High-density buildings, elevator bookings, and tight curb space\u2014plan for move windows and COIs."
+  },
+  {
+    "slug": "gramercy",
+    "name": "Gramercy",
+    "borough": "Manhattan",
+    "blurb": "High-density buildings, elevator bookings, and tight curb space\u2014plan for move windows and COIs."
+  },
+  {
+    "slug": "murray-hill",
+    "name": "Murray Hill",
+    "borough": "Manhattan",
+    "blurb": "High-density buildings, elevator bookings, and tight curb space\u2014plan for move windows and COIs."
+  },
+  {
+    "slug": "kips-bay",
+    "name": "Kips Bay",
+    "borough": "Manhattan",
+    "blurb": "High-density buildings, elevator bookings, and tight curb space\u2014plan for move windows and COIs."
+  },
+  {
+    "slug": "midtown-east",
+    "name": "Midtown East",
+    "borough": "Manhattan",
+    "blurb": "High-density buildings, elevator bookings, and tight curb space\u2014plan for move windows and COIs."
+  },
+  {
+    "slug": "midtown-west",
+    "name": "Midtown West",
+    "borough": "Manhattan",
+    "blurb": "High-density buildings, elevator bookings, and tight curb space\u2014plan for move windows and COIs."
+  },
+  {
+    "slug": "hells-kitchen",
+    "name": "Hell's Kitchen",
+    "borough": "Manhattan",
+    "blurb": "High-density buildings, elevator bookings, and tight curb space\u2014plan for move windows and COIs."
+  },
+  {
+    "slug": "upper-east-side",
+    "name": "Upper East Side",
+    "borough": "Manhattan",
+    "blurb": "High-density buildings, elevator bookings, and tight curb space\u2014plan for move windows and COIs."
+  },
+  {
+    "slug": "upper-west-side",
+    "name": "Upper West Side",
+    "borough": "Manhattan",
+    "blurb": "High-density buildings, elevator bookings, and tight curb space\u2014plan for move windows and COIs."
+  },
+  {
+    "slug": "harlem",
+    "name": "Harlem",
+    "borough": "Manhattan",
+    "blurb": "High-density buildings, elevator bookings, and tight curb space\u2014plan for move windows and COIs."
+  },
+  {
+    "slug": "east-harlem",
+    "name": "East Harlem",
+    "borough": "Manhattan",
+    "blurb": "High-density buildings, elevator bookings, and tight curb space\u2014plan for move windows and COIs."
+  },
+  {
+    "slug": "washington-heights",
+    "name": "Washington Heights",
+    "borough": "Manhattan",
+    "blurb": "High-density buildings, elevator bookings, and tight curb space\u2014plan for move windows and COIs."
+  },
+  {
+    "slug": "inwood",
+    "name": "Inwood",
+    "borough": "Manhattan",
+    "blurb": "High-density buildings, elevator bookings, and tight curb space\u2014plan for move windows and COIs."
+  },
+  {
+    "slug": "williamsburg",
+    "name": "Williamsburg",
+    "borough": "Brooklyn",
+    "blurb": "A mix of brownstones and mid-rises\u2014stairs, curb space, and weekend demand can drive timing and cost."
+  },
+  {
+    "slug": "greenpoint",
+    "name": "Greenpoint",
+    "borough": "Brooklyn",
+    "blurb": "A mix of brownstones and mid-rises\u2014stairs, curb space, and weekend demand can drive timing and cost."
+  },
+  {
+    "slug": "bushwick",
+    "name": "Bushwick",
+    "borough": "Brooklyn",
+    "blurb": "A mix of brownstones and mid-rises\u2014stairs, curb space, and weekend demand can drive timing and cost."
+  },
+  {
+    "slug": "bed-stuy",
+    "name": "Bedford-Stuyvesant (Bed-Stuy)",
+    "borough": "Brooklyn",
+    "blurb": "A mix of brownstones and mid-rises\u2014stairs, curb space, and weekend demand can drive timing and cost."
+  },
+  {
+    "slug": "crown-heights",
+    "name": "Crown Heights",
+    "borough": "Brooklyn",
+    "blurb": "A mix of brownstones and mid-rises\u2014stairs, curb space, and weekend demand can drive timing and cost."
+  },
+  {
+    "slug": "prospect-heights",
+    "name": "Prospect Heights",
+    "borough": "Brooklyn",
+    "blurb": "A mix of brownstones and mid-rises\u2014stairs, curb space, and weekend demand can drive timing and cost."
+  },
+  {
+    "slug": "park-slope",
+    "name": "Park Slope",
+    "borough": "Brooklyn",
+    "blurb": "A mix of brownstones and mid-rises\u2014stairs, curb space, and weekend demand can drive timing and cost."
+  },
+  {
+    "slug": "gowanus",
+    "name": "Gowanus",
+    "borough": "Brooklyn",
+    "blurb": "A mix of brownstones and mid-rises\u2014stairs, curb space, and weekend demand can drive timing and cost."
+  },
+  {
+    "slug": "carroll-gardens",
+    "name": "Carroll Gardens",
+    "borough": "Brooklyn",
+    "blurb": "A mix of brownstones and mid-rises\u2014stairs, curb space, and weekend demand can drive timing and cost."
+  },
+  {
+    "slug": "cobble-hill",
+    "name": "Cobble Hill",
+    "borough": "Brooklyn",
+    "blurb": "A mix of brownstones and mid-rises\u2014stairs, curb space, and weekend demand can drive timing and cost."
+  },
+  {
+    "slug": "boerum-hill",
+    "name": "Boerum Hill",
+    "borough": "Brooklyn",
+    "blurb": "A mix of brownstones and mid-rises\u2014stairs, curb space, and weekend demand can drive timing and cost."
+  },
+  {
+    "slug": "brooklyn-heights",
+    "name": "Brooklyn Heights",
+    "borough": "Brooklyn",
+    "blurb": "A mix of brownstones and mid-rises\u2014stairs, curb space, and weekend demand can drive timing and cost."
+  },
+  {
+    "slug": "dumbo",
+    "name": "DUMBO",
+    "borough": "Brooklyn",
+    "blurb": "A mix of brownstones and mid-rises\u2014stairs, curb space, and weekend demand can drive timing and cost."
+  },
+  {
+    "slug": "downtown-brooklyn",
+    "name": "Downtown Brooklyn",
+    "borough": "Brooklyn",
+    "blurb": "A mix of brownstones and mid-rises\u2014stairs, curb space, and weekend demand can drive timing and cost."
+  },
+  {
+    "slug": "fort-greene",
+    "name": "Fort Greene",
+    "borough": "Brooklyn",
+    "blurb": "A mix of brownstones and mid-rises\u2014stairs, curb space, and weekend demand can drive timing and cost."
+  },
+  {
+    "slug": "clinton-hill",
+    "name": "Clinton Hill",
+    "borough": "Brooklyn",
+    "blurb": "A mix of brownstones and mid-rises\u2014stairs, curb space, and weekend demand can drive timing and cost."
+  },
+  {
+    "slug": "sunset-park",
+    "name": "Sunset Park",
+    "borough": "Brooklyn",
+    "blurb": "A mix of brownstones and mid-rises\u2014stairs, curb space, and weekend demand can drive timing and cost."
+  },
+  {
+    "slug": "bay-ridge",
+    "name": "Bay Ridge",
+    "borough": "Brooklyn",
+    "blurb": "A mix of brownstones and mid-rises\u2014stairs, curb space, and weekend demand can drive timing and cost."
+  },
+  {
+    "slug": "red-hook",
+    "name": "Red Hook",
+    "borough": "Brooklyn",
+    "blurb": "A mix of brownstones and mid-rises\u2014stairs, curb space, and weekend demand can drive timing and cost."
+  },
+  {
+    "slug": "flatbush",
+    "name": "Flatbush",
+    "borough": "Brooklyn",
+    "blurb": "A mix of brownstones and mid-rises\u2014stairs, curb space, and weekend demand can drive timing and cost."
+  },
+  {
+    "slug": "long-island-city",
+    "name": "Long Island City",
+    "borough": "Queens",
+    "blurb": "Varied housing stock and good value\u2014parking can be easier, but building rules still vary block to block."
+  },
+  {
+    "slug": "astoria",
+    "name": "Astoria",
+    "borough": "Queens",
+    "blurb": "Varied housing stock and good value\u2014parking can be easier, but building rules still vary block to block."
+  },
+  {
+    "slug": "sunnyside",
+    "name": "Sunnyside",
+    "borough": "Queens",
+    "blurb": "Varied housing stock and good value\u2014parking can be easier, but building rules still vary block to block."
+  },
+  {
+    "slug": "woodside",
+    "name": "Woodside",
+    "borough": "Queens",
+    "blurb": "Varied housing stock and good value\u2014parking can be easier, but building rules still vary block to block."
+  },
+  {
+    "slug": "jackson-heights",
+    "name": "Jackson Heights",
+    "borough": "Queens",
+    "blurb": "Varied housing stock and good value\u2014parking can be easier, but building rules still vary block to block."
+  },
+  {
+    "slug": "elmhurst",
+    "name": "Elmhurst",
+    "borough": "Queens",
+    "blurb": "Varied housing stock and good value\u2014parking can be easier, but building rules still vary block to block."
+  },
+  {
+    "slug": "forest-hills",
+    "name": "Forest Hills",
+    "borough": "Queens",
+    "blurb": "Varied housing stock and good value\u2014parking can be easier, but building rules still vary block to block."
+  },
+  {
+    "slug": "rego-park",
+    "name": "Rego Park",
+    "borough": "Queens",
+    "blurb": "Varied housing stock and good value\u2014parking can be easier, but building rules still vary block to block."
+  },
+  {
+    "slug": "flushing",
+    "name": "Flushing",
+    "borough": "Queens",
+    "blurb": "Varied housing stock and good value\u2014parking can be easier, but building rules still vary block to block."
+  },
+  {
+    "slug": "ridgewood",
+    "name": "Ridgewood",
+    "borough": "Queens",
+    "blurb": "Varied housing stock and good value\u2014parking can be easier, but building rules still vary block to block."
+  },
+  {
+    "slug": "kew-gardens",
+    "name": "Kew Gardens",
+    "borough": "Queens",
+    "blurb": "Varied housing stock and good value\u2014parking can be easier, but building rules still vary block to block."
+  },
+  {
+    "slug": "jamaica",
+    "name": "Jamaica",
+    "borough": "Queens",
+    "blurb": "Varied housing stock and good value\u2014parking can be easier, but building rules still vary block to block."
+  },
+  {
+    "slug": "mott-haven",
+    "name": "Mott Haven",
+    "borough": "Bronx",
+    "blurb": "More space and variety\u2014confirm building rules early and plan truck access for busy corridors."
+  },
+  {
+    "slug": "fordham",
+    "name": "Fordham",
+    "borough": "Bronx",
+    "blurb": "More space and variety\u2014confirm building rules early and plan truck access for busy corridors."
+  },
+  {
+    "slug": "riverdale",
+    "name": "Riverdale",
+    "borough": "Bronx",
+    "blurb": "More space and variety\u2014confirm building rules early and plan truck access for busy corridors."
+  },
+  {
+    "slug": "kingsbridge",
+    "name": "Kingsbridge",
+    "borough": "Bronx",
+    "blurb": "More space and variety\u2014confirm building rules early and plan truck access for busy corridors."
+  },
+  {
+    "slug": "st-george",
+    "name": "St. George",
+    "borough": "Staten Island",
+    "blurb": "More driveway and curb access\u2014still confirm building/HOA rules, stairs, and long carries."
+  },
+  {
+    "slug": "stapleton",
+    "name": "Stapleton",
+    "borough": "Staten Island",
+    "blurb": "More driveway and curb access\u2014still confirm building/HOA rules, stairs, and long carries."
+  },
+  {
+    "slug": "tottenville",
+    "name": "Tottenville",
+    "borough": "Staten Island",
+    "blurb": "More driveway and curb access\u2014still confirm building/HOA rules, stairs, and long carries."
+  }
+]

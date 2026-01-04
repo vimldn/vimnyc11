@@ -1,10 +1,20 @@
 'use client'
 
 import React, { useEffect, useMemo, useState } from 'react'
+import dynamic from 'next/dynamic'
 import { useParams, useRouter } from 'next/navigation'
 import Link from 'next/link'
 import { Building2, AlertTriangle, CheckCircle, XCircle, Search, ChevronRight, ChevronLeft, Home, FileText, Users, History, Hammer, MapPin, DollarSign, Clock, Star, ThumbsUp, MessageSquare, Flame, Bug, Volume2, ShieldAlert, ExternalLink } from 'lucide-react'
-import { AreaChart, Area, PieChart, Pie, Cell, BarChart, Bar, ResponsiveContainer, XAxis, YAxis, Tooltip, Legend, LineChart, Line } from 'recharts'
+
+const SignalsAreaChart = dynamic(() => import('./SignalsAreaChart'), {
+  ssr: false,
+  loading: () => <div className="h-full w-full flex items-center justify-center text-xs text-[#64748b]">Loading chart…</div>,
+})
+
+const ViolationsYearlyBarChart = dynamic(() => import('./ViolationsYearlyBarChart'), {
+  ssr: false,
+  loading: () => <div className="h-full w-full flex items-center justify-center text-xs text-[#64748b]">Loading chart…</div>,
+})
 
 type Tab = 'overview' | 'violations' | 'complaints' | 'timeline' | 'landlord' | 'permits' | 'sales' | 'neighborhood' | 'reviews'
 
@@ -157,7 +167,7 @@ export default function BuildingPage() {
   const [reviews, setReviews] = useState<Review[]>([])
   const [reviewsData, setReviewsData] = useState<{ count: number, averageRating: number, distribution: Record<number, number> }>({ count: 0, averageRating: 0, distribution: { 5: 0, 4: 0, 3: 0, 2: 0, 1: 0 } })
   const [showReviewForm, setShowReviewForm] = useState(false)
-  const [reviewForm, setReviewForm] = useState({ rating: 5, title: '', review: '', pros: '', cons: '', lived_here: false, years_lived: '', author_name: '', email: '', phone: '' })
+  const [reviewForm, setReviewForm] = useState({ rating: 5, title: '', review: '', pros: '', cons: '', lived_here: false, years_lived: '', author_name: '', email: '', phone: '', website: '' })
   const [submittingReview, setSubmittingReview] = useState(false)
   const [reviewError, setReviewError] = useState('')
   const [votedReviews, setVotedReviews] = useState<Set<string>>(new Set())
@@ -230,7 +240,7 @@ export default function BuildingPage() {
         setReviews([json.review, ...reviews])
         setReviewsData(prev => ({ ...prev, count: prev.count + 1, averageRating: ((prev.averageRating * prev.count) + reviewForm.rating) / (prev.count + 1) }))
         setShowReviewForm(false)
-        setReviewForm({ rating: 5, title: '', review: '', pros: '', cons: '', lived_here: false, years_lived: '', author_name: '', email: '', phone: '' })
+        setReviewForm({ rating: 5, title: '', review: '', pros: '', cons: '', lived_here: false, years_lived: '', author_name: '', email: '', phone: '', website: '' })
       }
     } catch { setReviewError('Failed to submit review') }
     finally { setSubmittingReview(false) }
@@ -369,6 +379,20 @@ export default function BuildingPage() {
             </div>
             {searchError && <div className="text-xs text-red-400 mt-1">{searchError}</div>}
           </form>
+
+          <Link
+            href="/services"
+            className="inline-flex items-center px-3 py-1.5 rounded-lg border border-[#1e293b] text-sm text-[#cbd5e1] hover:bg-white/5 transition flex-shrink-0"
+          >
+            Services
+          </Link>
+
+          <Link
+            href="/blog"
+            className="inline-flex items-center px-3 py-1.5 rounded-lg border border-[#1e293b] text-sm text-[#cbd5e1] hover:bg-white/5 transition flex-shrink-0"
+          >
+            Blog
+          </Link>
         </div>
       </header>
 
@@ -552,24 +576,7 @@ export default function BuildingPage() {
               </div>
               <div className="h-72">
                 <ChartBoundary title="Reports over time">
-                  <ResponsiveContainer width="100%" height="100%">
-                    <AreaChart data={signalSeries || []} margin={{ top: 5, right: 5, bottom: 5, left: 0 }}>
-                    <defs>
-                      <linearGradient id="heatG" x1="0" y1="0" x2="0" y2="1"><stop offset="5%" stopColor="#f59e0b" stopOpacity={0.28}/><stop offset="95%" stopColor="#f59e0b" stopOpacity={0}/></linearGradient>
-                      <linearGradient id="pestsG" x1="0" y1="0" x2="0" y2="1"><stop offset="5%" stopColor="#10b981" stopOpacity={0.22}/><stop offset="95%" stopColor="#10b981" stopOpacity={0}/></linearGradient>
-                      <linearGradient id="noiseG" x1="0" y1="0" x2="0" y2="1"><stop offset="5%" stopColor="#3b82f6" stopOpacity={0.22}/><stop offset="95%" stopColor="#3b82f6" stopOpacity={0}/></linearGradient>
-                      <linearGradient id="otherG" x1="0" y1="0" x2="0" y2="1"><stop offset="5%" stopColor="#64748b" stopOpacity={0.18}/><stop offset="95%" stopColor="#64748b" stopOpacity={0}/></linearGradient>
-                    </defs>
-                    <XAxis dataKey="label" stroke="#4a5568" fontSize={10} tickLine={false} interval="preserveStartEnd" minTickGap={16} />
-                    <YAxis stroke="#4a5568" fontSize={10} tickLine={false} axisLine={false} />
-                    <Tooltip contentStyle={{ backgroundColor: '#151c2c', border: '1px solid #2a3441', borderRadius: '10px', fontSize: '12px' }} />
-                    <Legend />
-                    <Area type="monotone" dataKey="heat" name="Heat" stroke="#f59e0b" strokeWidth={2} fill="url(#heatG)" stackId="1" />
-                    <Area type="monotone" dataKey="pests" name="Pests" stroke="#10b981" strokeWidth={2} fill="url(#pestsG)" stackId="1" />
-                    <Area type="monotone" dataKey="noise" name="Noise" stroke="#3b82f6" strokeWidth={2} fill="url(#noiseG)" stackId="1" />
-                    <Area type="monotone" dataKey="other" name="Other" stroke="#64748b" strokeWidth={2} fill="url(#otherG)" stackId="1" />
-                    </AreaChart>
-                  </ResponsiveContainer>
+                  <SignalsAreaChart data={signalSeries || []} />
                 </ChartBoundary>
               </div>
               <div className="mt-4 text-xs text-[#64748b]">
@@ -637,15 +644,7 @@ export default function BuildingPage() {
               <h3 className="font-bold mb-4">Violations by Year</h3>
               <div className="h-56">
                 <ChartBoundary title="Violations by Year">
-                  <ResponsiveContainer width="100%" height="100%">
-                    <BarChart data={(data.yearlyStats ? data.yearlyStats.slice(0, 8).reverse() : [])}>
-                    <XAxis dataKey="year" stroke="#4a5568" fontSize={11} />
-                    <YAxis stroke="#4a5568" fontSize={11} />
-                    <Tooltip contentStyle={{ backgroundColor: '#151c2c', border: '1px solid #2a3441', borderRadius: '8px' }} />
-                    <Bar dataKey="hpdViolations" fill="#3b82f6" name="HPD" radius={[4,4,0,0]} />
-                    <Bar dataKey="dobViolations" fill="#f97316" name="DOB" radius={[4,4,0,0]} />
-                    </BarChart>
-                  </ResponsiveContainer>
+                  <ViolationsYearlyBarChart data={(data.yearlyStats ? data.yearlyStats.slice(0, 8).reverse() : [])} />
                 </ChartBoundary>
               </div>
             </div>
@@ -1304,9 +1303,24 @@ export default function BuildingPage() {
                     <input type="text" value={reviewForm.author_name} onChange={e => setReviewForm({...reviewForm, author_name: e.target.value})} placeholder="Anonymous" className="w-full sm:w-64 p-3 bg-[#151c2c] border border-[#1e293b] rounded-xl text-white placeholder-[#4a5568] focus:outline-none focus:border-blue-500/50" maxLength={50} />
                   </div>
 
+                  {/* Honeypot (hidden) */}
+                  <div className="sr-only" aria-hidden="true">
+                    <label htmlFor="website">Website</label>
+                    <input
+                      id="website"
+                      type="text"
+                      value={reviewForm.website}
+                      onChange={e => setReviewForm({ ...reviewForm, website: e.target.value })}
+                      autoComplete="off"
+                      tabIndex={-1}
+                    />
+                  </div>
+
                   {/* Contact Details (Required but not displayed publicly) */}
                   <div className="p-4 bg-[#151c2c] rounded-xl border border-[#1e293b]">
-                    <p className="text-sm text-[#94a3b8] mb-4">📧 Your contact details are required for verification but will <strong>never be displayed publicly</strong>.</p>
+                    <p className="text-sm text-[#94a3b8] mb-4">
+                      📧 Contact details help verify reviews and reduce spam. They will <strong>never be displayed publicly</strong>, and we won’t reach out unless verification is needed.
+                    </p>
                     <div className="grid sm:grid-cols-2 gap-4">
                       <div>
                         <label className="block text-sm text-[#94a3b8] mb-2">Email Address *</label>

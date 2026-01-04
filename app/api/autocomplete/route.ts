@@ -16,7 +16,13 @@ function padBBL(bbl: string): string {
 
 export async function GET(req: NextRequest) {
   const query = req.nextUrl.searchParams.get('q')
-  if (!query || query.length < 2) return NextResponse.json({ suggestions: [] })
+  const cacheHeaders = {
+    // Cache at the CDN/edge for speed; allow quick revalidation.
+    // This is safe because suggestions are non-sensitive and derived from public datasets.
+    'Cache-Control': 'public, max-age=0, s-maxage=300, stale-while-revalidate=600',
+  }
+
+  if (!query || query.length < 2) return NextResponse.json({ suggestions: [] }, { headers: cacheHeaders })
 
   try {
     const q = query.trim()
@@ -47,7 +53,7 @@ export async function GET(req: NextRequest) {
       data = await fallbackRes.json()
     }
 
-    if (!Array.isArray(data)) return NextResponse.json({ suggestions: [] })
+    if (!Array.isArray(data)) return NextResponse.json({ suggestions: [] }, { headers: cacheHeaders })
 
     const seen = new Set<string>()
     const suggestions = data
@@ -68,9 +74,9 @@ export async function GET(req: NextRequest) {
       }))
       .slice(0, 8)
 
-    return NextResponse.json({ suggestions })
+    return NextResponse.json({ suggestions }, { headers: cacheHeaders })
   } catch (e) {
     console.error('Autocomplete error:', e)
-    return NextResponse.json({ suggestions: [] })
+    return NextResponse.json({ suggestions: [] }, { headers: cacheHeaders })
   }
 }

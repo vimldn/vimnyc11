@@ -42,8 +42,14 @@ export async function GET(req: NextRequest) {
 
   try {
     // First try full-text search
-    const searchQuery = `https://data.cityofnewyork.us/resource/64uk-42ks.json?$where=address LIKE '%25${address.toUpperCase().replace(/'/g, "''")}%25'&$limit=10`
-    const res = await fetch(searchQuery, { headers: { 'Accept': 'application/json' } })
+    // Build the URL using URLSearchParams so the Socrata $where clause is
+    // encoded correctly (including literal % wildcards).
+    const safe = address.toUpperCase().replace(/'/g, "''")
+    const url = new URL('https://data.cityofnewyork.us/resource/64uk-42ks.json')
+    url.searchParams.set('$where', `address LIKE '%${safe}%'`)
+    url.searchParams.set('$limit', '10')
+
+    const res = await fetch(url.toString(), { headers: { 'Accept': 'application/json' } })
     let data = await res.json()
 
     // Fallback to $q search

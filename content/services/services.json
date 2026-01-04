@@ -1,0 +1,410 @@
+[
+  {
+    "slug": "moving-companies",
+    "name": "Moving Companies",
+    "category": "Moving & Setup",
+    "cta": "Get mover quotes",
+    "titleTemplate": "Moving Companies in {area} (NYC)",
+    "metaTemplate": "Local moving companies for {area}... get quotes, tips, and a quick checklist.",
+    "highlights": [
+      "COI handling",
+      "Elevator bookings",
+      "Packing & assembly",
+      "Downtown parking strategy"
+    ],
+    "checklist": [
+      "Confirm your building move window and elevator reservation",
+      "Ask for COI requirements and send them early",
+      "List large items (sofa, bed, appliances)",
+      "Clarify pricing: binding vs hourly, minimum hours, add-ons"
+    ],
+    "faqs": [
+      {
+        "q": "How much do movers cost in {area}?",
+        "a": "Costs depend on apartment size, stairs/elevator access, distance, and packing. Get 2\u20133 itemized quotes and compare add-ons."
+      },
+      {
+        "q": "Do I need a COI?",
+        "a": "Many co-ops/condos and doorman buildings require a Certificate of Insurance. Ask management for the exact wording."
+      },
+      {
+        "q": "When should I book?",
+        "a": "End-of-month and summer book fast. If you can, choose mid-month weekdays for better availability and pricing."
+      }
+    ]
+  },
+  {
+    "slug": "move-out-cleaning",
+    "name": "Move-Out Cleaning",
+    "category": "Moving & Setup",
+    "cta": "Get cleaning quotes",
+    "titleTemplate": "Move-Out Cleaning in {area} (NYC)",
+    "metaTemplate": "Local move-out cleaning for {area}... get quotes, tips, and a quick checklist.",
+    "highlights": [
+      "Deep kitchen + bathroom",
+      "Move-out checklist",
+      "Same-week availability",
+      "Eco-friendly options"
+    ],
+    "checklist": [
+      "Confirm what your lease/building expects at move-out",
+      "Photograph condition before and after cleaning",
+      "Prioritize kitchen grease, oven, and bathroom grout",
+      "Ask if supplies and vacuum are included"
+    ],
+    "faqs": [
+      {
+        "q": "What does move-out cleaning include?",
+        "a": "Usually a deep clean of kitchen, bathroom, floors, baseboards, and surfaces. Confirm oven/fridge and inside cabinets."
+      },
+      {
+        "q": "How long does it take?",
+        "a": "Studios often take a few hours; larger apartments can take most of a day depending on condition."
+      },
+      {
+        "q": "Do I need to be there?",
+        "a": "Not always\u2014many cleaners can coordinate key pickup with doormen/lockboxes. Clarify access and instructions."
+      }
+    ]
+  },
+  {
+    "slug": "storage-units",
+    "name": "Storage Units",
+    "category": "Moving & Setup",
+    "cta": "Compare storage options",
+    "titleTemplate": "Storage Units in {area} (NYC)",
+    "metaTemplate": "Local storage units for {area}... get quotes, tips, and a quick checklist.",
+    "highlights": [
+      "Short-term and long-term",
+      "Climate control",
+      "Pickup & dropoff options",
+      "Insurance guidance"
+    ],
+    "checklist": [
+      "Estimate how many boxes/furniture pieces you need to store",
+      "Decide if climate control matters (art, electronics, clothing)",
+      "Check access hours and elevator/cart availability",
+      "Ask about promos vs long-term rates"
+    ],
+    "faqs": [
+      {
+        "q": "Do I need climate-controlled storage?",
+        "a": "If you\u2019re storing electronics, artwork, musical instruments, or fabrics, climate control can help prevent damage."
+      },
+      {
+        "q": "Can storage be picked up from my apartment?",
+        "a": "Some services offer valet pickup/dropoff. Traditional units require you to transport items to the facility."
+      },
+      {
+        "q": "What size unit do I need?",
+        "a": "A studio often fits in a small unit; 1\u20132BRs usually need medium. Inventory your big items for accuracy."
+      }
+    ]
+  },
+  {
+    "slug": "junk-removal",
+    "name": "Junk Removal & Donation Pickup",
+    "category": "Moving & Setup",
+    "cta": "Get removal quotes",
+    "titleTemplate": "Junk Removal & Donation Pickup in {area} (NYC)",
+    "metaTemplate": "Local junk removal & donation pickup for {area}... get quotes, tips, and a quick checklist.",
+    "highlights": [
+      "Same-day pickup",
+      "Donation-friendly options",
+      "Furniture and appliance hauling",
+      "Stairs + building rules awareness"
+    ],
+    "checklist": [
+      "Confirm what your building allows (service elevator, hours)",
+      "Separate donation-worthy items from trash",
+      "Ask about disposal fees for mattresses/appliances",
+      "Take photos so you get an accurate quote"
+    ],
+    "faqs": [
+      {
+        "q": "What items can be removed?",
+        "a": "Most crews take furniture, boxes, and appliances. Some items (paint, chemicals) may require special handling."
+      },
+      {
+        "q": "Can you donate usable items?",
+        "a": "Many providers can arrange donation drop-offs. Ask for donation receipts if you need them."
+      },
+      {
+        "q": "How is pricing calculated?",
+        "a": "Often by volume (truck space) plus labor. Stairs, long carries, and heavy items can increase cost."
+      }
+    ]
+  },
+  {
+    "slug": "pest-control",
+    "name": "Pest Control",
+    "category": "Healthy Home",
+    "cta": "Get pest control quotes",
+    "titleTemplate": "Pest Control in {area} (NYC)",
+    "metaTemplate": "Local pest control for {area}... get quotes, tips, and a quick checklist.",
+    "highlights": [
+      "Roaches, ants, mice, and more",
+      "Targeted treatment plans",
+      "Building-aware guidance",
+      "Follow-up scheduling"
+    ],
+    "checklist": [
+      "Ask about integrated pest management (IPM)",
+      "Request a clear plan: treatment + follow-up",
+      "Seal obvious gaps and reduce food/water sources",
+      "Document issues (photos, dates) for management"
+    ],
+    "faqs": [
+      {
+        "q": "How fast will treatment work?",
+        "a": "Some issues improve in days; others need follow-ups. The key is combining treatment with sealing/cleaning."
+      },
+      {
+        "q": "Is it safe for pets?",
+        "a": "Many providers have pet-safe protocols, but you should disclose pets and follow prep instructions closely."
+      },
+      {
+        "q": "Should my landlord pay?",
+        "a": "In many cases, building-wide infestations are a landlord responsibility. Keep records and ask in writing."
+      }
+    ]
+  },
+  {
+    "slug": "bed-bug-exterminators",
+    "name": "Bed Bug Exterminators",
+    "category": "Healthy Home",
+    "cta": "Get bed bug help",
+    "titleTemplate": "Bed Bug Exterminators in {area} (NYC)",
+    "metaTemplate": "Local bed bug exterminators for {area}... get quotes, tips, and a quick checklist.",
+    "highlights": [
+      "Inspection + treatment",
+      "Heat or chemical options",
+      "Prep checklist",
+      "Follow-up verification"
+    ],
+    "checklist": [
+      "Confirm whether inspection is included",
+      "Ask which treatment method is recommended and why",
+      "Follow prep instructions exactly (laundry, bagging)",
+      "Request follow-up and re-inspection plan"
+    ],
+    "faqs": [
+      {
+        "q": "How do I confirm it\u2019s bed bugs?",
+        "a": "Look for bites patterns, dark specks on seams, and live bugs. A professional inspection is the most reliable."
+      },
+      {
+        "q": "What\u2019s better: heat or chemical?",
+        "a": "It depends on severity and building context. Heat can be fast; chemical programs can be effective with follow-ups."
+      },
+      {
+        "q": "How do I prevent bringing them to a new place?",
+        "a": "Bag and launder textiles, inspect furniture, and avoid moving untreated items. Ask your provider for a move plan."
+      }
+    ]
+  },
+  {
+    "slug": "rodent-control",
+    "name": "Rodent Control & Proofing",
+    "category": "Healthy Home",
+    "cta": "Get rodent proofing help",
+    "titleTemplate": "Rodent Control & Proofing in {area} (NYC)",
+    "metaTemplate": "Local rodent control & proofing for {area}... get quotes, tips, and a quick checklist.",
+    "highlights": [
+      "Entry-point sealing",
+      "Baiting strategy",
+      "Basement/trash area focus",
+      "Prevention guidance"
+    ],
+    "checklist": [
+      "Ask for an inspection to find entry points",
+      "Prioritize sealing over repeated baiting alone",
+      "Improve trash storage and reduce clutter",
+      "Schedule follow-up to confirm activity stops"
+    ],
+    "faqs": [
+      {
+        "q": "Why do mice keep coming back?",
+        "a": "Without sealing entry points, new rodents can enter. Proofing plus sanitation usually works best."
+      },
+      {
+        "q": "Do ultrasonic devices work?",
+        "a": "Evidence is mixed. Physical exclusion, traps, and targeted baiting are more dependable."
+      },
+      {
+        "q": "Is this a building-wide issue?",
+        "a": "Often yes. Ask management about trash areas, basements, and exterior sealing."
+      }
+    ]
+  },
+  {
+    "slug": "mold-remediation",
+    "name": "Mold Remediation",
+    "category": "Healthy Home",
+    "cta": "Get mold remediation quotes",
+    "titleTemplate": "Mold Remediation in {area} (NYC)",
+    "metaTemplate": "Local mold remediation for {area}... get quotes, tips, and a quick checklist.",
+    "highlights": [
+      "Leak source diagnosis",
+      "Containment and cleanup",
+      "Post-remediation verification",
+      "Humidity control tips"
+    ],
+    "checklist": [
+      "Identify and fix the moisture source first",
+      "Ask about containment and air filtration",
+      "Request a written scope of work",
+      "Consider post-remediation testing if sensitive"
+    ],
+    "faqs": [
+      {
+        "q": "Is bleach enough for mold?",
+        "a": "Small surface issues may be manageable, but recurring mold usually indicates a moisture source that must be fixed."
+      },
+      {
+        "q": "Do I need testing?",
+        "a": "Testing can help document conditions, especially for disputes or health concerns, but remediation should focus on moisture."
+      },
+      {
+        "q": "How long does remediation take?",
+        "a": "Small jobs can be a day; larger issues take longer depending on drying and repairs."
+      }
+    ]
+  },
+  {
+    "slug": "air-quality-testing",
+    "name": "Air Quality Testing",
+    "category": "Healthy Home",
+    "cta": "Book air quality testing",
+    "titleTemplate": "Air Quality Testing in {area} (NYC)",
+    "metaTemplate": "Local air quality testing for {area}... get quotes, tips, and a quick checklist.",
+    "highlights": [
+      "Allergens and particulates",
+      "Humidity + ventilation checks",
+      "Actionable recommendations",
+      "Follow-up testing"
+    ],
+    "checklist": [
+      "Describe symptoms and timing (night, after rain, etc.)",
+      "Ask what the test measures and what it doesn\u2019t",
+      "Review ventilation and humidity readings",
+      "Request clear next-step recommendations"
+    ],
+    "faqs": [
+      {
+        "q": "What does air quality testing measure?",
+        "a": "Depending on the provider, it may measure particulates, humidity, CO2, VOCs, and allergens. Confirm scope."
+      },
+      {
+        "q": "Will this prove a landlord issue?",
+        "a": "It can document conditions, but results require interpretation. Pair with photos of leaks/vents when relevant."
+      },
+      {
+        "q": "How can I improve air quickly?",
+        "a": "Ventilate, control humidity, use HEPA filtration, and address sources like leaks or pests."
+      }
+    ]
+  },
+  {
+    "slug": "tenant-lawyers",
+    "name": "Tenant Lawyers & Housing Court Help",
+    "category": "Tenant Help",
+    "cta": "Talk to a tenant lawyer",
+    "titleTemplate": "Tenant Lawyers in {area} (NYC) | Housing Court Help",
+    "metaTemplate": "Find tenant lawyers serving {area}. Guidance for repairs, rent stabilization, harassment, and housing court.",
+    "highlights": [
+      "Repairs and habitability",
+      "Rent-stabilization questions",
+      "Harassment and overcharge",
+      "Housing court support"
+    ],
+    "checklist": [
+      "Write down dates, photos, and copies of messages",
+      "Keep a timeline of issues and responses",
+      "Bring lease, riders, and notices",
+      "Ask about strategy and likely timeline"
+    ],
+    "faqs": [
+      {
+        "q": "Can a lawyer help with repairs?",
+        "a": "Yes\u2014counsel can guide documentation, letters, and court/agency options depending on facts."
+      },
+      {
+        "q": "How do I know if I\u2019m rent stabilized?",
+        "a": "Some buildings are registered; a lawyer can advise. Keep paperwork and check your building history."
+      },
+      {
+        "q": "What should I bring to a consult?",
+        "a": "Lease, notices, photos, repair requests, and a timeline. The clearer your record, the better advice you\u2019ll get."
+      }
+    ]
+  },
+  {
+    "slug": "home-inspection",
+    "name": "Home Inspection (Condo / Co-op)",
+    "category": "Buying",
+    "cta": "Book a home inspection",
+    "titleTemplate": "Home Inspection in {area} (NYC) | Condo & Co-op",
+    "metaTemplate": "Book a condo/co-op home inspection for {area}. Learn what to check, typical issues, and how to use the report.",
+    "highlights": [
+      "Condo and co-op experience",
+      "Moisture and electrical focus",
+      "Written report",
+      "Negotiation insights"
+    ],
+    "checklist": [
+      "Confirm inspector experience with co-ops/condos",
+      "Ask about moisture, electrical, and HVAC checks",
+      "Request a clear report with photos",
+      "Use findings to plan repairs or negotiate"
+    ],
+    "faqs": [
+      {
+        "q": "Do condos/co-ops need inspections?",
+        "a": "Yes. Even newer units can have moisture, electrical, or appliance issues. An inspection reduces surprises."
+      },
+      {
+        "q": "Will you inspect building common areas?",
+        "a": "Typically you inspect the unit; some inspectors can note visible common-area concerns. Ask what\u2019s included."
+      },
+      {
+        "q": "How long does it take?",
+        "a": "Many inspections take 2\u20134 hours depending on size and scope."
+      }
+    ]
+  },
+  {
+    "slug": "internet-providers",
+    "name": "Internet & Wi-Fi Setup",
+    "category": "Moving & Setup",
+    "cta": "Check internet options",
+    "titleTemplate": "Internet Providers in {area} (NYC) | Wi-Fi Setup",
+    "metaTemplate": "Internet and Wi\u2011Fi setup for {area}: provider availability, installation tips, and a quick router checklist.",
+    "highlights": [
+      "Provider availability by building",
+      "Router and mesh recommendations",
+      "Speed troubleshooting",
+      "Same-week setup tips"
+    ],
+    "checklist": [
+      "Ask your building/doorman which providers serve the address",
+      "Confirm installation requirements and appointment windows",
+      "Choose router/mesh based on layout and walls",
+      "Test placement and update firmware"
+    ],
+    "faqs": [
+      {
+        "q": "Which internet provider is best in {area}?",
+        "a": "It depends on your specific building. Ask neighbors/doormen and compare availability, reliability, and install times."
+      },
+      {
+        "q": "Do I need a mesh system?",
+        "a": "If you have thick walls or multiple rooms, mesh can improve coverage. Small apartments may do fine with one router."
+      },
+      {
+        "q": "How can I speed up installation?",
+        "a": "Book early, confirm building access rules, and have your modem/router ready. Ask about self-install kits when possible."
+      }
+    ]
+  }
+]

@@ -3,6 +3,23 @@ import { supabase } from '@/lib/supabase'
 
 const PUBLIC_REVIEW_COLUMNS = 'id,bbl,rating,title,review,pros,cons,lived_here,years_lived,author_name,helpful_count,created_at'
 
+// Best-effort, in-memory rate limiting. This helps deter basic spam without
+// introducing any external dependencies.
+const RATE_LIMIT_WINDOW_MS = 15 * 60 * 1000
+const RATE_LIMIT_MAX = 3
+const rateLimit = new Map<string, { count: number; resetAt: number }>()
+
+function getClientIp(req: NextRequest): string | null {
+  const xff = req.headers.get('x-forwarded-for')
+  if (xff) return xff.split(',')[0]?.trim() || null
+  const xri = req.headers.get('x-real-ip')
+  if (xri) return xri.trim() || null
+  // NextRequest may provide ip in some runtimes; keep this as a safe fallback.
+  // @ts-ignore
+  if (req.ip) return String(req.ip)
+  return null
+}
+
 // GET reviews for a building
 export async function GET(req: NextRequest) {
   const bbl = req.nextUrl.searchParams.get('bbl')
@@ -61,6 +78,11 @@ export async function POST(req: NextRequest) {
   try {
     const body = await req.json()
     
+    // Honeypot field (should remain empty). Helps block naive bots.
+    if (typeof body?.website === 'string' && body.website.trim().length > 0) {
+      return NextResponse.json({ error: 'Invalid submission' }, { status: 400 })
+    }
+
     const { bbl, rating, title, review, pros, cons, lived_here, years_lived, author_name, email, phone } = body
 
     if (!bbl || !rating || !review) {
@@ -68,7 +90,7 @@ export async function POST(req: NextRequest) {
     }
 
     if (!email || !phone) {
-      return NextResponse.json({ error: 'Email and phone are required' }, { status: 400 })
+      return NextResponse.json({ error: 'Email and phone are required (not shown publicly)' }, { status: 400 })
     }
 
     if (!supabase) {
@@ -81,6 +103,22 @@ export async function POST(req: NextRequest) {
 
     if (review.length < 10) {
       return NextResponse.json({ error: 'Review must be at least 10 characters' }, { status: 400 })
+    }
+
+    // Rate limit (best effort). 3 submissions per IP per 15 minutes.
+    const ip = getClientIp(req)
+    if (ip) {
+      const now = Date.now()
+      const entry = rateLimit.get(ip)
+      if (!entry || now > entry.resetAt) {
+        rateLimit.set(ip, { count: 1, resetAt: now + RATE_LIMIT_WINDOW_MS })
+      } else {
+        if (entry.count >= RATE_LIMIT_MAX) {
+          return NextResponse.json({ error: 'Too many review submissions. Please try again in a bit.' }, { status: 429 })
+        }
+        entry.count += 1
+        rateLimit.set(ip, entry)
+      }
     }
 
     const { data, error } = await supabase
